@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.header`
   background: var(--background);
   border-bottom: 1px solid var(--green);
+  display: fixed;
 `;
 
 export const Content = styled.div`
