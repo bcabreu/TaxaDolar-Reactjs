@@ -10,7 +10,7 @@ import {
 import USA from "../../assets/bandeiras/USA.svg";
 import chooseOption from "../../assets/chooseOption.svg";
 
-export function ChooseCoin() {
+export function TradicionalCoin() {
   return (
     <Container>
       <header>ESCOLHA A MOEDA PARA CONVERSÃO</header>
@@ -34,7 +34,7 @@ export function ChooseCoin() {
           <Values>
             <h4>DÓLAR AMERICANO</h4>
             <p>
-              R$ <span>2000</span>
+              R$ <input type="number" value="2000"></input>
             </p>
           </Values>
         </ContentCoins>
@@ -42,7 +42,7 @@ export function ChooseCoin() {
         <ContentCoins>
           <LineDown>
             <Coins>
-              <img src={USA} alt="Estados Unidos"></img>
+              <img src={chooseOption} alt="Escolher opções"></img>
               <select name="coins" background-image={chooseOption}>
                 <option selected value="USD">
                   USD
@@ -52,13 +52,13 @@ export function ChooseCoin() {
                 <option value="COR">COR</option>
                 <option value="SID">SID</option>
               </select>
-              <img src={chooseOption} alt="Escolher opções"></img>
+              <img src={USA} alt="Estados Unidos"></img>
             </Coins>
           </LineDown>
           <Values>
             <h4>DÓLAR AMERICANO</h4>
             <p>
-              R$ <span>2000</span>
+              R$ <input type="number" value="2000"></input>
             </p>
           </Values>
         </ContentCoins>

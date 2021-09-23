@@ -7,6 +7,7 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   max-width: 1120px;
+  height: 3rem;
   margin: 0 auto;
 
   padding: 2rem 1rem;

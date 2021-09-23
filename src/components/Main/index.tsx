@@ -1,4 +1,4 @@
-import { ChooseCoin } from "../ChooseCoin";
+import { TradicionalCoin } from "../TradicionalCoin";
 import { Dates } from "../Dates";
 import { TypeCoin } from "../TypeCoin";
 import { Container } from "./styles";
@@ -8,7 +8,7 @@ export function Main() {
     <Container>
       <TypeCoin />
       <Dates />
-      <ChooseCoin />
+      <TradicionalCoin />
     </Container>
   );
 }

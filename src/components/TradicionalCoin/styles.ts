@@ -42,7 +42,7 @@ export const ContentCoins = styled.div`
   &:first-child {
     border-right: 1px solid var(--green);
   }
-
+  overflow: hidden;
   color: var(--text-title);
 `;
 
@@ -57,13 +57,24 @@ export const Values = styled.div`
 
   h4 {
     font-size: 0.75rem;
+    font-weight: 400;
   }
 
   p {
     font-size: 0.875rem;
 
-    span {
-      font-size: 1.625rem;
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    input[type="number"] {
+      font-size: 1.6rem;
+      border: none;
+      color: var(--text-title);
+      background: var(--shapes);
+      text-align: center;
+      width: 80%;
+      outline: none;
     }
   }
 `;
