@@ -11,7 +11,7 @@ export const Container = styled.footer`
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-around;
 
   @media (min-width: 720px) {
@@ -27,6 +27,10 @@ export const Content = styled.div`
   flex-direction: column;
   border-right: 0.5px solid var(--green);
 
+  &:hover {
+    background: var(--green);
+  }
+
   &:last-child {
     border: none;
   }
@@ -37,6 +41,5 @@ export const Content = styled.div`
 
   p {
     font-size: 0.75rem;
-    margin-top: 0.5rem;
   }
 `;

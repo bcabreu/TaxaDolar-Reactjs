@@ -9,8 +9,31 @@ import {
 
 import USA from "../../assets/bandeiras/USA.svg";
 import chooseOption from "../../assets/chooseOption.svg";
+import { useEffect } from "react";
+import { api } from "../../services/api";
 
 export function TradicionalCoin() {
+  const coinsConvert = ["BRL", "USD", "EUR"];
+  const coins = [
+    "USD",
+    "CAD",
+    "EUA",
+    "GBP",
+    "ARS",
+    "JPY",
+    "CHF",
+    "AUD",
+    "CNY",
+    "ILS",
+    "BRL",
+  ];
+
+  useEffect(() => {
+    api
+      .get("USD-BRL")
+      .then((response) => console.log(response.data.USDBRL.bid));
+  });
+
   return (
     <Container>
       <header>ESCOLHA A MOEDA PARA CONVERSÃO</header>
@@ -28,13 +51,12 @@ export function TradicionalCoin() {
                 <option value="COR">COR</option>
                 <option value="SID">SID</option>
               </select>
-              <img src={chooseOption} alt="Escolher opções"></img>
             </Coins>
           </LineDown>
           <Values>
             <h4>DÓLAR AMERICANO</h4>
             <p>
-              R$ <input type="number" value="2000"></input>
+              US$ <input type="number"></input>
             </p>
           </Values>
         </ContentCoins>
@@ -42,23 +64,26 @@ export function TradicionalCoin() {
         <ContentCoins>
           <LineDown>
             <Coins>
-              <img src={chooseOption} alt="Escolher opções"></img>
-              <select name="coins" background-image={chooseOption}>
-                <option selected value="USD">
-                  USD
-                </option>
+              <img src={USA} alt="Estados Unidos"></img>
+              <select
+                className="coin2"
+                name="coins"
+                background-image={chooseOption}
+              >
+                <option value="USD">USD</option>
                 <option value="EUA">EUA</option>
-                <option value="BRZ">BRZ</option>
+                <option selected value="BRL">
+                  BRL
+                </option>
                 <option value="COR">COR</option>
                 <option value="SID">SID</option>
               </select>
-              <img src={USA} alt="Estados Unidos"></img>
             </Coins>
           </LineDown>
           <Values>
-            <h4>DÓLAR AMERICANO</h4>
+            <h4>REAL BRASILEIRO</h4>
             <p>
-              R$ <input type="number" value="2000"></input>
+              R$ <input type="number"></input>
             </p>
           </Values>
         </ContentCoins>

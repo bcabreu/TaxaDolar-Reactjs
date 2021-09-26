@@ -52,11 +52,11 @@ a {
   color: var(--text-title);
 
   &:hover {
-    color: var(--green)
+    color: var(--text-title)
   }
 
   &:active {
-    color: var(--green)
+    color: var(--text-title)
   }
 
   &:visited {

@@ -10,7 +10,7 @@ export function Header() {
           <ul>
             <li>Cotações</li>
             <li>Mercado de Ações</li>
-            <li>Blog</li>
+            {/* <li>Blog</li> */}
             <li>Contato</li>
           </ul>
         </Content>

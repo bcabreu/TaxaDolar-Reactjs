@@ -5,7 +5,7 @@ import chooseOption from "../../../src/assets/chooseOption.svg";
 export const Container = styled.div`
   header {
     color: var(--text-title);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 400;
     margin-top: 1.2rem;
   }
@@ -37,8 +37,9 @@ export const Coins = styled.div`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-position: 35px center;
-    width: 45px;
+    background-position: 3.5rem center;
+    width: 5rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -58,11 +59,6 @@ export const Values = styled.div`
   color: var(--text-title);
   line-height: 2rem;
   padding-top: 0.2rem;
-
-  h4 {
-    font-size: 0.75rem;
-    font-weight: 400;
-  }
 
   p {
     font-size: 0.875rem;

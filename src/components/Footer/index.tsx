@@ -1,7 +1,7 @@
 import { Container, Content } from "./styles";
 import quoteImg from "../../../src/assets/quote.svg";
 import marketImg from "../../../src/assets/market.svg";
-import blogImg from "../../../src/assets/blog.svg";
+// import blogImg from "../../../src/assets/blog.svg";
 import contactImg from "../../../src/assets/contact.svg";
 import shareImg from "../../../src/assets/share.svg";
 
@@ -23,12 +23,12 @@ export function Footer() {
           </a>
         </Content>
 
-        <Content>
+        {/* <Content>
           <a href="http://localhost:3000">
             <img src={blogImg} alt="Cotações" />
             <p>BLOG</p>
           </a>
-        </Content>
+        </Content> */}
 
         <Content>
           <a href="http://localhost:3000">
