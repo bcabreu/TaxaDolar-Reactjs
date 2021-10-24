@@ -37,8 +37,14 @@ export const Coins = styled.div`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-position: 35px center;
-    width: 45px;
+    background-position: 95% center;
+    width: 100%;
+    padding-left: 0.4rem;
+    text-align: center;
+
+    option {
+      padding: 1rem 0;
+    }
   }
 `;
 
