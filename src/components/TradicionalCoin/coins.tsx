@@ -8,7 +8,6 @@ export const coinsB = [
   { id: "USD", name: "Dólar Americano" },
   { id: "CAD", name: "Dólar Canadense" },
   { id: "BRL", name: "Real Brasileiro" },
-  { id: "BRL", name: "Real Brasileiro" },
 ];
 
 // { AFN: "Afghani do Afeganistão" },
