@@ -1,10 +1,10 @@
-export const coinsA = [
+export const coinsB = [
   { id: "BRL", name: "Real Brasileiro" },
   { id: "USD", name: "Dólar Americano" },
   { id: "EUR", name: "Euro" },
 ];
 
-export const coinsB = [
+export const coinsA = [
   { id: "USD", name: "Dólar Americano" },
   { id: "CAD", name: "Dólar Canadense" },
   { id: "BRL", name: "Real Brasileiro" },

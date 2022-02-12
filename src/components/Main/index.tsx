@@ -1,13 +1,12 @@
 import { TradicionalCoin } from "../TradicionalCoin";
 import { Dates } from "../Dates";
-import { TypeCoin } from "../TypeCoin";
-import { Container } from "./styles";
+import { Container, Title } from "./styles";
 import { DigitalCoin } from "../DigitalCoin";
 
 export function Main() {
   return (
     <Container>
-      <TypeCoin />
+      <Title>cotação do dia</Title>
       <Dates />
       <TradicionalCoin />
       <DigitalCoin />
