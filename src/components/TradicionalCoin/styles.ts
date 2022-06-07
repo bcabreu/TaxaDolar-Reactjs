@@ -60,7 +60,7 @@ export const Values = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
   color: var(--text-title);
   line-height: 2rem;
   padding-top: 0.2rem;

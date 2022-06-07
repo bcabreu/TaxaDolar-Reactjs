@@ -24,7 +24,7 @@ export function DigitalCoin() {
 
           <Values>
             <p>
-              US$ <input type="number"></input>
+              US$ <input type="number" />
             </p>
           </Values>
         </ContentCoins>

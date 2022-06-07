@@ -9,16 +9,52 @@ import {
 
 // import USA from "../../assets/bandeiras/USA.svg";
 import chooseOption from "../../assets/chooseOption.svg";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { api } from "../../services/api";
-import { coinsA, coinsB } from "./coins";
+import { fromCurrency, toCurrency  } from "./coins";
 
 export function TradicionalCoin() {
+const [currencyOptions, setCurrencyOptions] = useState(['USD'])
+const [coinsConverted, setCoinsConverted] = useState(['BRL'])
+const [exchangeRate, setExchangeRate] = useState()
+const [amount, setAmount] = useState(1)
+const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
+
+const onChangeCurrency = (event: any) => {setCurrencyOptions(event.target.value)}
+const onChangeCurrencyConvert = (event: any) => {setCoinsConverted(event.target.value)}
+
+const handleToAmount = (event:any) => {
+  setAmount(event.target.value)
+  setAmountInFromCurrency(true)
+}
+
+const handleFromAmount = (event:any) => {
+  setAmount(event.target.value)
+  setAmountInFromCurrency(false)
+}
+
+let toAmount, fromAmount
+
+if(amountInFromCurrency) {
+  fromAmount = amount
+  toAmount = amount * Number(exchangeRate)
+} else {
+  toAmount = amount
+  fromAmount = amount / Number(exchangeRate)
+}
+
   useEffect(() => {
-    api
-      .get("USD-BRL")
-      .then((response) => console.log(response.data.USDBRL.bid));
-  });
+    if(currencyOptions !== coinsConverted && fromCurrency !== undefined && toCurrency!== undefined  ) {
+      api
+      .get(`${currencyOptions}-${coinsConverted}`)  
+      .then((response) => {
+        const firstCurrency = Object.keys(response.data)[0]
+        setExchangeRate(response.data[firstCurrency].bid)
+      })
+    } else {
+      alert("As moedas não podem ser a mesmas, favor escolher uma moeda diferente!")
+    }
+  }, [currencyOptions, coinsConverted]);
 
   return (
     <Container>
@@ -27,19 +63,23 @@ export function TradicionalCoin() {
         <ContentCoins>
           <LineDown>
             <Coins>
-              <select name="coins" background-image={chooseOption}>
-                {coinsB.map((coin) => (
-                  <option key={coin.id + coin.name}>
-                    {coin.id + " - " + coin.name}
-                  </option>
+              <select value={currencyOptions} onChange={onChangeCurrency} name="coins" background-image={chooseOption}>
+                {fromCurrency.map((option) => (
+                  <option value={option.id} key={option.id}>{option.id} - {option.name}</option>
                 ))}
               </select>
             </Coins>
           </LineDown>
           <Values>
             <p>
-              US$ <input type="number"></input>
+              <input type="number" value={fromAmount} onChange={handleToAmount} />
             </p>
+            <span>
+            {new Intl.NumberFormat("pt-br", {
+                  style: "currency",
+                  currency: `${currencyOptions}`
+                }).format(fromAmount)}
+            </span>
           </Values>
         </ContentCoins>
 
@@ -47,22 +87,27 @@ export function TradicionalCoin() {
           <LineDown>
             <Coins>
               <select
-                className="coin2"
+                value={coinsConverted}
+                onChange={onChangeCurrencyConvert}
                 name="coins"
                 background-image={chooseOption}
               >
-                {coinsA.map((coin) => (
-                  <option key={coin.id + coin.name}>
-                    {coin.id + " - " + coin.name}
-                  </option>
+                {toCurrency.map((option) => (
+                  <option value={option.id} key={option.id}>{option.id} - {option.name}</option>
                 ))}
               </select>
             </Coins>
           </LineDown>
           <Values>
             <p>
-              R$ <input type="number"></input>
+              <input type="number" value={toAmount} onChange={handleFromAmount}/>
             </p>
+            <span>
+            {new Intl.NumberFormat("pt-br", {
+                style: "currency",
+                currency: `${coinsConverted}`
+              }).format(toAmount)}
+            </span>
           </Values>
         </ContentCoins>
       </Content>

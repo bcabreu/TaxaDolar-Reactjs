@@ -27,6 +27,10 @@ export const Content = styled.div`
     &:hover {
       filter: brightness(2);
     }
+
+    &.active {
+      filter: brightness(2);
+    }
   }
 
   @media (max-width: 720px) {
