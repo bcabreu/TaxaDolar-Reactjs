@@ -17,9 +17,6 @@ export const fromCurrency = [
   { id: "CLP", name: "Peso Chileno"},
   { id: "CNY", name: "Yuan Chinês"},
   { id: "COP", name: "Peso Colombiano"},
-
-
-
 ];
 
 
